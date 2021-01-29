@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class GradeStudent : MonoBehaviour
 {
-    private Color32 start;
-    private Color32 current;
+    private Color start;
+    private Color current;
     public GameObject obj;
+    private FreeDraw.DrawingSettings drawSurf;
     private Texture2D tex;
+
+    public float FailThreshold = 60.0f;
+    public bool erase = false;
+    public Color drawColor = new Color(255f, 0f, 0f, 255f);
+    public Color eraseColor = new Color(255f, 255f, 255f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(obj);
+        //Debug.Log(obj);
         tex = obj.GetComponent<SpriteRenderer>().sprite.texture;
+        drawSurf = obj.GetComponent<FreeDraw.DrawingSettings>();
+        //Debug.Log(tex);
         start = AverageColor(tex);
     }
 
@@ -21,8 +29,29 @@ public class GradeStudent : MonoBehaviour
     void Update()
     {
         current = AverageColor(tex);
-        Debug.Log(current);
-        Debug.Log(start);
+        //Debug.Log(current);
+        //Debug.Log(start);
+
+        if(current.r >= FailThreshold)
+        {
+            //Debug.Log("YOU FAIELD");
+        }
+        else
+        {
+            //Debug.Log(current.r);
+        }
+    }
+
+    void changePen()
+    {
+        if (erase)
+        {
+            drawSurf.SetMarkerColour(eraseColor);
+        }
+        else
+        {
+            drawSurf.SetMarkerColour(drawColor);
+        }
     }
 
     Color AverageColor(Texture2D tex)
@@ -37,6 +66,7 @@ public class GradeStudent : MonoBehaviour
             g += texColors[i].g;
             b += texColors[i].b;
         }
+        
         return new Color(r/total, g/total, b/total, 0);
     }
 
