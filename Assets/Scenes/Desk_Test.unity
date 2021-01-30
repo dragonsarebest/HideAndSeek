@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3984c7019e0609449f088f667025862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minigame: {fileID: 8611607120627141784, guid: bf743ede4fe2469458dbe7a73bdb8562, type: 3}
 --- !u!212 &1384036930
 SpriteRenderer:
   m_ObjectHideFlags: 0
