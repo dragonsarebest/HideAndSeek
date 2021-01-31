@@ -6,9 +6,11 @@ using UnityEngine;
 public class ClickScript : MonoBehaviour, IPointerClickHandler
 {
     public GameObject minigame;
+    GameObject instantGame;
     public void OnPointerClick(PointerEventData eventData)
     {
-        Instantiate(minigame,transform.parent);
+        instantGame = Instantiate(minigame,transform.parent);
+        instantGame.transform.position = new Vector3(0, 0, -5);
         Debug.Log("Clicked It");
     }
     // Start is called before the first frame update
