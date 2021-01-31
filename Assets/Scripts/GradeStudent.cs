@@ -37,7 +37,8 @@ public class GradeStudent : MonoBehaviour
         displayText = container.AddComponent<TextMesh>();
         displayText.text = text;
         displayText.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
-        container.transform.localScale = new Vector3(0.18f, 0.18f, 0.18f);
+        float scale = 0.18f * parentGameObj.transform.localScale.x;
+        container.transform.localScale = new Vector3(scale, scale, scale);
         container.transform.localPosition = Vector3.zero;
 
 
@@ -98,14 +99,10 @@ public class GradeStudent : MonoBehaviour
         //Debug.Log(current);
         //Debug.Log(start);
 
-        if(current.r >= FailThreshold)
+        if(current.r >= FailThreshold && !failed)
         {
-            //Debug.Log("YOU FAIELD");
+            Debug.Log("YOU FAIELD");
             failed = true;
-        }
-        else
-        {
-            //Debug.Log(current.r);
         }
     }
 
