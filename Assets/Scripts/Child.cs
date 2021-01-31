@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class Child 
 {
-    float grade;
-    float joy;
-    string name;
-//    static string nameList[Liam Olivia,Noah,"Emma"
-//3   Oliver  Ava
-//4   William Sophia
-//5   Elijah  Isabella
-//6   James   Charlotte
-//7   Benjamin    Amelia
-//8   Lucas   Mia
-//9   Mason   Harper
-//10  Ethan   Evelyn];
-    // Start is called before the first frame update
+    public float grade;
+    public float joy;
+    public string name;
+
     void Start()
     {
         grade = Random.Range(40, 90);
         joy = grade + Random.Range(-20, 20);
-
+        name = StaticChildren.nameList[Mathf.RoundToInt(Random.Range(0, StaticChildren.nameList.Count - 1))];
     }
 
     // Update is called once per frame
