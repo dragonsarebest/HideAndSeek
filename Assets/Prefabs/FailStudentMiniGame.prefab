@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611607120627141786}
   - component: {fileID: 8611607120627141785}
+  - component: {fileID: 5542636961933522914}
   m_Layer: 0
   m_Name: FailStudentMiniGame
   m_TagString: Untagged
@@ -44,6 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7647977167d94a4880df7f2962c2631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5542636961933522914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611607120627141784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7461ca8ed10b1e4ca9930dd028a70c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 0}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1001 &361575780642293900
 PrefabInstance:
   m_ObjectHideFlags: 0
