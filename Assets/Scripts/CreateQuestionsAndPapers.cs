@@ -50,6 +50,6 @@ public class CreateQuestionsAndPapers : MonoBehaviour
         {
             counter += (QuestionPieces[i].GetComponent<GradeStudent>().failed ? 1 : 0);
         }
-        Debug.Log(counter);
+        //Debug.Log(counter);
     }
 }

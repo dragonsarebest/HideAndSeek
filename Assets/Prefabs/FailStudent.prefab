@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623449849683262710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -459.59, y: -240.44, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.83586, y: 0.83586, z: 1}
   m_Children:
   - {fileID: 3623449849843087925}
@@ -214,7 +214,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b45b0b9c6934ff240925afd4209e9865, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -235,12 +235,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3623449849683262710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 298941818fb52a04dbf9a270dd6519fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 3064695ce6863ff4794b094c3e6cf7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: 41078086fff38cc4299d78bfc8bf7131, type: 3}
   numberOfQuestions: 5
-  lineSpacing: 0.7
+  lineSpacing: 0.75
   questionPrefab: {fileID: 7559754362024466572, guid: ae414ad4ba9f6374fabb12da7dfce181, type: 3}
   startLineloc: {fileID: 3623449849843087924}
   drawingArea: {fileID: 3623449848664159485}
