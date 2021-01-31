@@ -23,6 +23,10 @@ public class TetrisHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (spawnerScript.end)
+        {
+            float score = spawnerScript.GetScore();
+            StaticChildren.currentStudent.joy -= (20 * (score/100));
+        }
     }
 }

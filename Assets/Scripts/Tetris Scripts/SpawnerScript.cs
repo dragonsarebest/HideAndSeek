@@ -8,7 +8,7 @@ public class SpawnerScript : MonoBehaviour
     List<Shapescript> Tetrominos = new List<Shapescript>();
     [HideInInspector]
     public static Transform[,] board;
-    bool end;
+    public bool end;
     void Start()
     {
         board = new Transform[13, 11];

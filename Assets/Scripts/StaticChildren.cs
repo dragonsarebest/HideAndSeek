@@ -4,8 +4,10 @@ using UnityEngine;
 
 public static class StaticChildren 
 {
-    public static List<Child> students = new List<Child>();
+    public static GameObject transitions;
 
+    public static List<Child> students = new List<Child>();
+    public static Child currentStudent;
     public static List<string> nameList = new List<string> {"Jack","Lewis","Ryan","Cameron","James","Andrew","Liam","Matthew","Jamie","Callum","Ross","Jordan","Daniel","Kieran","Connor","Scott","Kyle",
         "David","Adam","Dylan","Michael","Ben","Thomas","Craig","Nathan","Sean","John","Aaron","Calum","Christopher","Alexander","Robert","Euan","Joshua","Declan","Aidan","Mark","Robbie","Luke","Fraser",
         "Reece","William","Ewan","Joseph","Paul","Brandon","Lee","Owen","Josh","Samuel","Finlay","Stuart","Rhys","Stephen","Rory","Jake","Steven","Sam","Jay","Benjamin","Ethan","Harry","Shaun","Aiden","Darren",
@@ -23,7 +25,7 @@ public static class StaticChildren
         "Finley","Humza","Jasper","Johnny","Keiren","Keiron","Kurtis"
  };
 
-    static void GenStudents(int num)
+    public static void GenStudents(int num)
     {
         for (int i = 0; i < num; i++)
         {
@@ -31,5 +33,20 @@ public static class StaticChildren
         }
     }
 
+    public static void OnStart()
+    {
+        transitions = GameObject.Find("Transitions");
+        transitions.SetActive(false);
+    }
 
+    public static TransitionHandler CallTransition()
+    {
+        transitions.SetActive(true);
+        return transitions.GetComponent<TransitionHandler>();
+    }
+
+    public static void DisableTransitions()
+    {
+        transitions.SetActive(false);
+    }
 }
