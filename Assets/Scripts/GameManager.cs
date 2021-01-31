@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     public int totalstudents;
     public int minigames;
     static public int minigamesComplete;
-
+    bool end;
     void Start()
     {
         curday = 0;
         curstudent = 0;
-
+        end = false;
         //we give this the number of students we want
         StaticChildren.GenStudents(totalstudents);
         StaticChildren.currentStudent = StaticChildren.students[curstudent];
@@ -26,7 +26,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(minigames <= minigamesComplete)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        if(minigames <= minigamesComplete && !end)
         {
             newStudent();
         }
@@ -52,8 +56,9 @@ public class GameManager : MonoBehaviour
         curday++;
         if (curday >= totaldays)
         {
-            //game ends
-
+            TransitionHandler transhand = StaticChildren.CallTransition();
+            StaticChildren.endscreen.GetComponent<Endgame>().EndTheGame();
+            end = true;
         }
 
         

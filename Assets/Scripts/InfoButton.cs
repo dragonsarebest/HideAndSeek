@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfoButton : MonoBehaviour
 {
+
     public void onClick()
     {
-        Debug.Log("Clicked Info Button");
+        
     }
 }

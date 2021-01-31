@@ -5,9 +5,10 @@ using UnityEngine;
 public static class StaticChildren 
 {
     public static GameObject transitions;
-
+    public static GameObject endscreen;
     public static List<Child> students = new List<Child>();
     public static Child currentStudent;
+    public static float FiredPercent;
     public static List<string> nameList = new List<string> {"Jack","Lewis","Ryan","Cameron","James","Andrew","Liam","Matthew","Jamie","Callum","Ross","Jordan","Daniel","Kieran","Connor","Scott","Kyle",
         "David","Adam","Dylan","Michael","Ben","Thomas","Craig","Nathan","Sean","John","Aaron","Calum","Christopher","Alexander","Robert","Euan","Joshua","Declan","Aidan","Mark","Robbie","Luke","Fraser",
         "Reece","William","Ewan","Joseph","Paul","Brandon","Lee","Owen","Josh","Samuel","Finlay","Stuart","Rhys","Stephen","Rory","Jake","Steven","Sam","Jay","Benjamin","Ethan","Harry","Shaun","Aiden","Darren",
@@ -37,6 +38,7 @@ public static class StaticChildren
     {
         transitions = GameObject.Find("Transitions");
         transitions.SetActive(false);
+        endscreen = GameObject.Find("Endscreen");
     }
 
     public static TransitionHandler CallTransition()
