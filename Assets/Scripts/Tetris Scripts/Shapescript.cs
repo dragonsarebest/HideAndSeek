@@ -16,6 +16,7 @@ public class Shapescript : MonoBehaviour
         spawner = transform.parent.GetComponent<SpawnerScript>();
         spawn = transform.position;
         timer = Time.time;
+
         if (!isValid())
         {
             spawner.EndGame();
@@ -55,11 +56,12 @@ public class Shapescript : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.W))
             {
-                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
-                if (!isValid())
-                {
-                    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
-                }
+                //transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+
+                //if (!isValid())
+                //{
+                //    transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+                //}
             }
             if (Time.time - timer > (Input.GetKey(KeyCode.S) ? fallTime/8 : fallTime))
             {
@@ -83,8 +85,9 @@ public class Shapescript : MonoBehaviour
     {
         foreach (Transform children in transform)
         {
-            spawner.board[(int)(children.position.y - spawn.y) + 10, (int)(children.position.x - spawn.x) + 5] = children;
             
+            SpawnerScript.board[(int)(children.position.y - spawn.y) + 10, (int)(children.position.x - spawn.x) + 5] = children;
+
         }
         active = false;
         
@@ -99,7 +102,7 @@ public class Shapescript : MonoBehaviour
             }
             try
             {
-                if (spawner.board[(int)(children.position.y - spawn.y) + 10, (int)(children.position.x - spawn.x) + 5] != null)
+                if (SpawnerScript.board[(int)(children.position.y - spawn.y) + 10, (int)(children.position.x - spawn.x) + 5] != null)
                 {
                     
                     return false;

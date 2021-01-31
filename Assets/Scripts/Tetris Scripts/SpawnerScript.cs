@@ -7,7 +7,7 @@ public class SpawnerScript : MonoBehaviour
     public List<GameObject> shapelist;
     List<Shapescript> Tetrominos = new List<Shapescript>();
     [HideInInspector]
-    public Transform[,] board;
+    public static Transform[,] board;
     bool end;
     void Start()
     {
@@ -120,13 +120,14 @@ public class SpawnerScript : MonoBehaviour
         }
         
         Debug.Log(whole);
+        Debug.Log(GetScore());
 
     }
     public float GetScore()
     {
         float filled = 0;
         float total = 0;
-        for (int i = 0; i < board.GetLength(0); i++)
+        for (int i = 0; i < board.GetLength(0)-2; i++)
         {
             for (int j = 0; j < board.GetLength(1); j++)
             {
