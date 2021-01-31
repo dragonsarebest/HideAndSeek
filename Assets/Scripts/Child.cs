@@ -10,7 +10,7 @@ public class Child
 
     public Child()
     {
-        grade = Random.Range(40, 90);
+        grade = Random.Range(70, 90);
         joy = grade + Random.Range(-20, 20);
         name = StaticChildren.nameList[Mathf.RoundToInt(Random.Range(0, StaticChildren.nameList.Count - 1))];
     }

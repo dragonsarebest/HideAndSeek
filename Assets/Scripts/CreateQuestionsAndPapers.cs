@@ -15,9 +15,14 @@ public class CreateQuestionsAndPapers : MonoBehaviour
     public GameObject questionPrefab;
     public GameObject startLineloc;
     public GameObject drawingArea;
-
+    GameObject background;
     void Start()
     {
+        //background = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //background.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //background.transform.parent = transform;
+        //background.transform.localScale = new Vector3(200, 200, 1);
+
         string contents = textFile.ToString();
         char[] splitchar = { '\n' };
         string[] questions = contents.Split(splitchar);
@@ -50,6 +55,19 @@ public class CreateQuestionsAndPapers : MonoBehaviour
         {
             counter += (QuestionPieces[i].GetComponent<GradeStudent>().failed ? 1 : 0);
         }
+        if(Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)){
+
+            float score = 100 *(counter / 5);
+            if(counter > StaticChildren.currentStudent.joy / 100)
+            {
+                StaticChildren.FiredPercent += 10;
+            }
+            StaticChildren.currentStudent.grade -= Mathf.RoundToInt((100 - score)/3);
+            GameManager.minigamesComplete++;
+            Destroy(transform.parent.parent.gameObject);
+
+        }
+
         //Debug.Log(counter);
     }
 }

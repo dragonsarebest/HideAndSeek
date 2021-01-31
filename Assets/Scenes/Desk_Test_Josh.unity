@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigame: {fileID: 8611607120627141784, guid: 3a6ced2c092b4134eb5148a0d494a089, type: 3}
+  anim: 1
 --- !u!212 &1384036930
 SpriteRenderer:
   m_ObjectHideFlags: 0
