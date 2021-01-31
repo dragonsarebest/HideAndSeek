@@ -29,12 +29,11 @@ public class ClickScript : MonoBehaviour, IPointerClickHandler
             }
             case animoption.Paper_Grab:
             {
-
+                transhand.playPaper();
                 break;
             }
         }
 
-        Debug.Log("Clicked It");
     }
     // Start is called before the first frame update
     void Start()

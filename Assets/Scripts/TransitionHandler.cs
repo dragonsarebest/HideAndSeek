@@ -23,17 +23,32 @@ public class TransitionHandler : MonoBehaviour
         Animator animcon = hammer.GetComponent<Animator>();
         AnimationClip anim = animcon.runtimeAnimatorController.animationClips[0];
         
-        StartCoroutine(WaitForAnim(anim,1));
+        StartCoroutine(WaitForAnim(anim,2));
 
     }
-
-    IEnumerator WaitForAnim(AnimationClip animclip, float spd)
+    public void playPaper()
     {
-        Transform hammer = transform.GetChild(2);
-        hammer.gameObject.SetActive(true);
-        float tempTime = animclip.length * (1 / spd);
+        Transform paper = transform.GetChild(1);
+        Animator animcon = paper.GetComponent<Animator>();
+        AnimationClip anim = animcon.runtimeAnimatorController.animationClips[0];
+
+        StartCoroutine(WaitForAnim(anim, 1));
+    }
+    public void playWalking()
+    {
+        Transform walk = transform.GetChild(3);
+        Animator animcon = walk.GetComponent<Animator>();
+        AnimationClip anim = animcon.runtimeAnimatorController.animationClips[0];
+
+        StartCoroutine(WaitForAnim(anim, 3));
+    }
+    IEnumerator WaitForAnim(AnimationClip animclip, int child)
+    {
+        Transform anim = transform.GetChild(child);
+        anim.gameObject.SetActive(true);
+        float tempTime = animclip.length;
         yield return new WaitForSeconds(tempTime);
-        hammer.gameObject.SetActive(false);
+        anim.gameObject.SetActive(false);
         StaticChildren.DisableTransitions();
     }
 }

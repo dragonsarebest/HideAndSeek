@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8611607120627141786}
   - component: {fileID: 8611607120627141785}
+  - component: {fileID: -2872923711369274321}
   m_Layer: 0
   m_Name: MiniGameTest
   m_TagString: Untagged
@@ -43,3 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7647977167d94a4880df7f2962c2631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2872923711369274321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611607120627141784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3064695ce6863ff4794b094c3e6cf7c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 41078086fff38cc4299d78bfc8bf7131, type: 3}
+  numberOfQuestions: 5
+  lineSpacing: 0.15
+  questionPrefab: {fileID: 7559754362024466572, guid: ae414ad4ba9f6374fabb12da7dfce181, type: 3}
+  startLineloc: {fileID: 8611607120627141784, guid: 3a6ced2c092b4134eb5148a0d494a089, type: 3}
+  drawingArea: {fileID: 0}

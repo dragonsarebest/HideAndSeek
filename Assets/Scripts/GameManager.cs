@@ -9,22 +9,24 @@ public class GameManager : MonoBehaviour
     int curstudent;
     public int totalstudents;
     public int minigames;
-    int minigamesComplete;
+    static public int minigamesComplete;
 
     void Start()
     {
         curday = 0;
         curstudent = 0;
+
         //we give this the number of students we want
         StaticChildren.GenStudents(totalstudents);
         StaticChildren.currentStudent = StaticChildren.students[curstudent];
         StaticChildren.OnStart();
+        Debug.Log(StaticChildren.students.Count);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(minigames >= minigamesComplete)
+        if(minigames <= minigamesComplete)
         {
             newStudent();
         }
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     void newStudent()
     {
+        TransitionHandler transhand = StaticChildren.CallTransition();
+        transhand.playWalking();
         curstudent++;
         minigamesComplete = 0;
         if (curstudent >= totalstudents)

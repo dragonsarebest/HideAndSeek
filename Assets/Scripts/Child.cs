@@ -8,7 +8,7 @@ public class Child
     public float joy;
     public string name;
 
-    void Start()
+    public Child()
     {
         grade = Random.Range(40, 90);
         joy = grade + Random.Range(-20, 20);

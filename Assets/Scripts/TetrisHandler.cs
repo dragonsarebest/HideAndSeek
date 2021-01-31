@@ -26,7 +26,10 @@ public class TetrisHandler : MonoBehaviour
         if (spawnerScript.end)
         {
             float score = spawnerScript.GetScore();
-            StaticChildren.currentStudent.joy -= (20 * (score/100));
+            StaticChildren.currentStudent.joy -= Mathf.RoundToInt((20 * (score/100)));
+            GameManager.minigamesComplete++;
+            Destroy(transform.gameObject);
+
         }
     }
 }
