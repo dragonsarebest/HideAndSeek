@@ -24,6 +24,8 @@ public class GradeStudent : MonoBehaviour
     private Vector2 ogPaperSize;
     private int initalX, initalY, width, height;
 
+    public float fontSize = 0.18f;
+
     public bool failed = false;
 
     public void setText(string text, GameObject DrawingArea2, GameObject parentGameObj)
@@ -37,7 +39,7 @@ public class GradeStudent : MonoBehaviour
         displayText = container.AddComponent<TextMesh>();
         displayText.text = text;
         displayText.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
-        float scale = 0.18f * parentGameObj.transform.localScale.x;
+        float scale = fontSize * parentGameObj.transform.localScale.x;
         container.transform.localScale = new Vector3(scale, scale, scale);
         container.transform.localPosition = Vector3.zero;
 

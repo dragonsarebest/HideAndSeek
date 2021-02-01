@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7559754362024466561}
   - component: {fileID: 7559754362024466563}
   m_Layer: 3
-  m_Name: DrawingPaper
+  m_Name: DrawingPaper_Question
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,3 +75,5 @@ MonoBehaviour:
   drawColor: {r: 255, g: 0, b: 0, a: 255}
   eraseColor: {r: 255, g: 255, b: 255, a: 0}
   displayText: {fileID: 0}
+  fontSize: 0.32
+  failed: 0
